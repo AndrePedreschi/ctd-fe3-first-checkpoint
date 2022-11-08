@@ -1,0 +1,119 @@
+.mainStyle {
+    margin-top: 84px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .app {
+        //margin: 0 auto;
+        max-width: 1200px;
+        width: 100%;
+        min-height: 310px;
+        background-color: #202020;
+        border-radius: 12px;
+        h1 {
+            color: #FFFFFF;
+            margin-left: 32px;
+        }
+
+        form {
+            width: 100%;
+            margin-top: 52px;
+            .formBox {
+                display: flex;
+                justify-content: center;
+                gap: 16px;
+                flex-wrap: wrap;
+
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+                        color: #FFFFFF99;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+
+                    input {
+                        width: 550px;
+                        height: 50px;
+                        background-color: #353535;
+                        border-radius: 12px;
+                        color: #FFFFFF;
+                        font-weight: 500;
+                        font-size: 22px;
+                        //box-shadow: none;
+
+                    }
+                    #codigoCor{
+                        width: 560px;
+                        height: 60px;
+                        background-color: #353535;
+                        border-radius: 12px;
+                        cursor: pointer;
+                        //box-shadow: none;
+                    }
+                }
+            }
+
+            .buttonStyle {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 24px;
+                
+
+                button {
+                    position: relative;
+                    margin-right: 32px;
+                    margin-bottom: 32px;
+                    width: 231px;
+                    height: 57px;
+                    border-radius: 12px;
+                    color: #FFFFFF;
+                    background-color: #36CE7C;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+    }
+
+    .msgErrorBox{
+
+        .msgErroStyle {
+            color: #ff0000;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    
+    .colorBox{
+
+        h1{
+
+        }
+        
+    }
+
+
+
+
+
+}
+
+
+.form-erro {
+    border: 3px solid #FF7070;
+    background-color: #221515;
+}
