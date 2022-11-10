@@ -13,10 +13,15 @@ function App() {
   const [codigoCor, setCodigoCor] = useState('')
   const [listaCor, setListaCor] = useState([])
   const [formularioErro, setFormularioErro] = useState(false)
+  const [nomeErro, setNomeErro] = useState('')
+  const [codigoErro, setCodigoErro] = useState('')
 
   function limparFormulario() {
     setNomeCor('')
     setCodigoCor('')
+    setFormularioErro(false)
+    setNomeErro(false)
+    setCodigoErro(false)
   }
 
 
@@ -24,22 +29,26 @@ function App() {
     evento.preventDefault();
 
     const novoCorCadastrada = {
-      nome: nomeCor,
+      nome: nomeCor.trim(),
       codigo: codigoCor,
     }
-    setListaCor([...listaCor, novoCorCadastrada]);
 
-    //console.log(listaCor);
-
-    //limparFormulario()
+    if(nomeCor.trim().length<3){
+      setFormularioErro(true)
+    } else if(codigoCor[0] !='#'){
+      setFormularioErro(true)
+    }else {
+      setListaCor([...listaCor, novoCorCadastrada]);
+      limparFormulario()
+    }
 
   }
 
   return (
     <main className='mainStyle'>
-      <div className="app">
+      <div className={formularioErro ? 'app form-erro' : 'app'}>
         <h1>ADICIONAR NOVA COR</h1>
-        <form onSubmit={event => cadastrarCor(event)} className={formularioErro ? 'form-erro' : ''}>
+        <form onSubmit={event => cadastrarCor(event)}>
 
           <div className='formBox'>
             <div>
@@ -66,13 +75,19 @@ function App() {
         }
       </div>
 
+      
       <div className='colorBox'>
-        <h1>CORES FAVORITAS</h1>
+      <h1>CORES FAVORITAS</h1>
+        <div className='cardBox'>
         {listaCor.map((cor, index) => {
           return (
-            <Card key={index} cor={cor.nome} codigo={cor.codigo} />
+            
+              <Card key={index} cor={cor.nome} codigo={cor.codigo} />
+
           )
         })}
+        </div>
+        
       </div>
 
     </main>

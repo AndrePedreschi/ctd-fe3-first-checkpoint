@@ -16,11 +16,15 @@
         h1 {
             color: #FFFFFF;
             margin-left: 32px;
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 40px;
+            line-height: 60px;
         }
 
         form {
             width: 100%;
-            margin-top: 52px;
+            margin-top: 32px;
             .formBox {
                 display: flex;
                 justify-content: center;
@@ -89,7 +93,8 @@
     }
 
     .msgErrorBox{
-
+        max-width: 1200px;
+        width: 100%;
         .msgErroStyle {
             color: #ff0000;
             font-weight: 600;
@@ -99,11 +104,23 @@
     }
     
     .colorBox{
+        max-width: 1200px;
+        width: 100%;
+       
+
 
         h1{
-
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 40px;
+            line-height: 60px;
         }
-        
+
+        .cardBox{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
     }
 
 
@@ -115,5 +132,5 @@
 
 .form-erro {
     border: 3px solid #FF7070;
-    background-color: #221515;
+    background-color: #221515 !important;
 }
