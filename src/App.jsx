@@ -13,15 +13,11 @@ function App() {
   const [codigoCor, setCodigoCor] = useState('')
   const [listaCor, setListaCor] = useState([])
   const [formularioErro, setFormularioErro] = useState(false)
-  const [nomeErro, setNomeErro] = useState('')
-  const [codigoErro, setCodigoErro] = useState('')
 
   function limparFormulario() {
     setNomeCor('')
     setCodigoCor('')
     setFormularioErro(false)
-    setNomeErro(false)
-    setCodigoErro(false)
   }
 
 
@@ -33,11 +29,11 @@ function App() {
       codigo: codigoCor,
     }
 
-    if(nomeCor.trim().length<3){
+    if (nomeCor.trim().length < 3) {
       setFormularioErro(true)
-    } else if(codigoCor[0] !='#'){
+    } else if (codigoCor[0] !== '#') {
       setFormularioErro(true)
-    }else {
+    } else {
       setListaCor([...listaCor, novoCorCadastrada]);
       limparFormulario()
     }
@@ -75,19 +71,17 @@ function App() {
         }
       </div>
 
-      
-      <div className='colorBox'>
-      <h1>CORES FAVORITAS</h1>
-        <div className='cardBox'>
-        {listaCor.map((cor, index) => {
-          return (
-            
-              <Card key={index} cor={cor.nome} codigo={cor.codigo} />
 
-          )
-        })}
+      <div className='colorBox'>
+        <h1>CORES FAVORITAS</h1>
+        <div className='cardBox'>
+          {listaCor.map((cor, index) => {
+            return (
+              <Card key={index} cor={cor.nome} codigo={cor.codigo} />
+            )
+          })}
         </div>
-        
+
       </div>
 
     </main>
